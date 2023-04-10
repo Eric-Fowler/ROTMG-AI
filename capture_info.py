@@ -103,7 +103,6 @@ class CapInfo:
         np.save(self.keyboard_mat, self.save_keyboard)
         np.save(self.mouse_mat, self.save_mouse)
         np.save(self.image_mat, self.save_images)
-        # self.clear_data()
 
     def clear_data(self):
         self.keyboard_events = []
