@@ -124,5 +124,5 @@ class CapInfo:
         print("Runtime: " + str(time.time() - self.start_time) + " seconds")
 
 
-capturer = CapInfo(top=0, left=0, right=1920, bottom=1080, fps_target=60, scaling=4)
-capturer.indefinite_segments(10, "p")
+capturer = CapInfo(top=0, left=0, right=1920, bottom=1080, fps_target=60, scaling=2)
+capturer.indefinite_segments(10, "m") # /** \todo /* I should set the files to save separately as temp files and then just merge them all together when I'm done.
