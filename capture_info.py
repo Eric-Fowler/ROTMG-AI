@@ -75,14 +75,42 @@ class CapInfo:
 
     def save_data(self, filepath="./Saved_Data"):
         self.save_path = filepath
+        self.save_time = str(time.time())
         self.keyboard_mat = (
-            filepath + "/" + str(self.nw) + "x" + str(self.nh) +"_"+str(self.target_fps)+"fps_keyboard.npy"
+            filepath
+            + "/"
+            + self.save_time
+            + "-"
+            + str(self.nw)
+            + "x"
+            + str(self.nh)
+            + "_"
+            + str(self.target_fps)
+            + "fps_keyboard.npy"
         )
         self.mouse_mat = (
-            filepath + "/" + str(self.nw) + "x" + str(self.nh) +"_"+str(self.target_fps)+ "fps_mouse.npy"
+            filepath
+            + "/"
+            + self.save_time
+            + "-"
+            + str(self.nw)
+            + "x"
+            + str(self.nh)
+            + "_"
+            + str(self.target_fps)
+            + "fps_mouse.npy"
         )
         self.image_mat = (
-            filepath + "/" + str(self.nw) + "x" + str(self.nh) +"_"+str(self.target_fps)+ "fps_images.npy"
+            filepath
+            + "/"
+            + self.save_time
+            + "-"
+            + str(self.nw)
+            + "x"
+            + str(self.nh)
+            + "_"
+            + str(self.target_fps)
+            + "fps_images.npy"
         )
 
         if not os.path.exists(self.save_path):
@@ -125,4 +153,6 @@ class CapInfo:
 
 
 capturer = CapInfo(top=0, left=0, right=1920, bottom=1080, fps_target=60, scaling=2)
-capturer.indefinite_segments(10, "m") # /** \todo /* I should set the files to save separately as temp files and then just merge them all together when I'm done.
+capturer.indefinite_segments(
+    10, "m"
+)  # /** \todo /* I should set the files to save separately as temp files and then just merge them all together when I'm done.
